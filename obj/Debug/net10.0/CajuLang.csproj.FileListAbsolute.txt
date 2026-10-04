@@ -1,0 +1,15 @@
+C:\Users\henri\CajuLang\bin\Debug\net10.0\CajuLang.exe
+C:\Users\henri\CajuLang\bin\Debug\net10.0\CajuLang.deps.json
+C:\Users\henri\CajuLang\bin\Debug\net10.0\CajuLang.runtimeconfig.json
+C:\Users\henri\CajuLang\bin\Debug\net10.0\CajuLang.dll
+C:\Users\henri\CajuLang\bin\Debug\net10.0\CajuLang.pdb
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.AssemblyInfoInputs.cache
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.AssemblyInfo.cs
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.csproj.CoreCompileInputs.cache
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.sourcelink.json
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.dll
+C:\Users\henri\CajuLang\obj\Debug\net10.0\refint\CajuLang.dll
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.pdb
+C:\Users\henri\CajuLang\obj\Debug\net10.0\CajuLang.genruntimeconfig.cache
+C:\Users\henri\CajuLang\obj\Debug\net10.0\ref\CajuLang.dll

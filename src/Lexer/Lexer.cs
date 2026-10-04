@@ -27,31 +27,50 @@ public class Lexer
         {
             char c = _source[_current];
 
-            if (char.IsLetter(c))
+            //caso seja espaço vazio
+            if (char.IsWhiteSpace(c))
             {
+                //verificando se antes havia palavra
+                if (wordChar.Count > 0)
+                {
+                    //gerando um token de Identifier
+                    string word = string.Concat(wordChar);
+                    tokens.Add(new Token(TokenType.Identifier, word));
+                    wordChar.Clear();
+                }
+            }
+            //caso seja letra, underline ou número
+            else if (char.IsLetter(c) || c == '_' || (wordChar.Count > 0 && char.IsDigit(c)))
+            {
+                //guardando a letra
                 wordChar.Add(c);
             }
-            if (_current > 0 && !char.IsLetter(c) && char.IsLetter(_source[_current - 1]))
+            //caso a ultima tenha sido letra ou underline e agora temos um caractere especial
+            else if (
+                wordChar.Count > 0 &&
+                !char.IsLetter(c) &&
+                c != '_' &&
+                !char.IsDigit(c)
+            )
             {
+                //cocatenando a palavra e guardando ela
                 string word = string.Concat(wordChar);
+                //gerando o token
                 tokens.Add(new Token(TokenType.Identifier, word));
+                //limpando o array de caracteres 
                 wordChar.Clear();
+
+                //criando o token
+                Token token = VerifyToken(c);
+                tokens.Add(token);
+
             }
+            // caso seja um carcatere especial
             else
             {
-                //case
-                switch (c)
-                {
-
-
-                    case '(':
-                        tokens.Add(new Token(TokenType.LeftParen, "("));
-                        break;
-
-                    case ')':
-                        tokens.Add(new Token(TokenType.RightParen, ")"));
-                        break;
-                }
+                //chamando função que cria token
+                Token token = VerifyToken(c);
+                tokens.Add(token);
             }
 
             _current++;
@@ -67,5 +86,47 @@ public class Lexer
         tokens.Add(new Token(TokenType.EOF, ""));
 
         return tokens;
+    }
+
+    private Token VerifyToken(char c)
+    {
+
+        Token token;
+        switch (c)
+        {
+            case '(':
+                token = new Token(TokenType.LeftParen, "(");
+                return token;
+
+            case ')':
+                token = new Token(TokenType.RightParen, ")");
+                return token;
+
+            case ';':
+                token = new Token(TokenType.Semicolon, ";");
+                return token;
+
+            case '\"':
+                //lista de caracteres pra string depois concatenar
+                List<char> chars = new List<char>();
+                //pegando a string
+                while (_current + 1 < _source.Length && _source[_current + 1] != '\"')
+                {
+                    chars.Add(_source[_current + 1]);
+                    _current++;
+                }
+                string text = string.Concat(chars);
+                token = new Token(TokenType.String, text);
+
+                //saindo do ultimo caractere e da aspas de fechamento
+                _current++;
+                return token;
+
+            default:
+                token = new Token(TokenType.Error, "");
+                return token;
+        }
+
+
     }
 }

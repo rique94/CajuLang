@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CajuLang")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+629b5ea0b8267d42d9bc5200389022d403bd464c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6cf38e31ecb782cd7174e02c84554a0a89b72966")]
 [assembly: System.Reflection.AssemblyProductAttribute("CajuLang")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CajuLang")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

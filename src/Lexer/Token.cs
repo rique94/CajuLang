@@ -2,6 +2,8 @@ namespace CajuLang.Lexer.token;
 
 public enum TokenType
 {
+    Error,
+
     Identifier,
     String,
 
